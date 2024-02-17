@@ -1,4 +1,5 @@
-﻿body {
+﻿/* General Styles */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
     color: #fff;
 }
 
+/* Header Styles */
 header {
     background-color: #333;
     color: #fff;
@@ -20,12 +22,12 @@ header {
     transition: background-color 0.5s ease;
 }
 
-header:hover {
-    background-color: #555;
-}
+    header:hover {
+        background-color: #555;
+    }
 
 h1 {
-    font-size: 36px;
+    font-size: 28px; /* Decrease font size for smaller screens */
     margin: 0;
     padding: 10px;
 }
@@ -35,31 +37,37 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+    nav ul li {
+        display: block; /* Change display to block for better stacking on small screens */
+        margin-bottom: 10px; /* Increase margin for better touch targets */
+    }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        nav ul li:last-child {
+            margin-bottom: 0; /* Remove margin from the last item */
+        }
 
-nav ul li a:hover {
-    color: #ddd;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
+            nav ul li a:hover {
+                color: #ddd;
+            }
+
+/* Section Styles */
 section {
-    padding: 50px 20px;
+    padding: 30px 20px; /* Adjust padding for smaller screens */
     text-align: center;
 }
 
-section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
+    section h2 {
+        font-size: 24px; /* Decrease font size for smaller screens */
+        margin-bottom: 20px; /* Adjust margin for smaller screens */
+    }
 
+/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
@@ -70,15 +78,16 @@ footer {
     width: 100%;
 }
 
-footer p {
-    margin: 0;
-}
+    footer p {
+        margin: 0;
+    }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -89,16 +98,42 @@ footer p {
         transform: translateY(50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
+/* Apply animations */
 section {
     animation: fadeIn 1s ease;
 }
 
 header {
     animation: slideIn 1s ease;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    nav ul li {
+        margin-bottom: 15px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+        section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+    footer {
+        padding: 8px;
+    }
 }
