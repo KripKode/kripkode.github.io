@@ -1,35 +1,17 @@
-﻿/* General Styles */
-body {
+﻿body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #222;
-    color: #fff;
 }
 
-/* Header Styles */
 header {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
+    position: fixed; /* Sticky header */
+    top: 0; /* Stick to the top */
     width: 100%;
-    text-align: center;
-    transition: background-color 0.5s ease;
-}
-
-    header:hover {
-        background-color: #555;
-    }
-
-h1 {
-    font-size: 28px; /* Decrease font size for smaller screens */
-    margin: 0;
-    padding: 10px;
+    z-index: 1000; /* Ensure header stays above other content */
 }
 
 nav ul {
@@ -38,36 +20,20 @@ nav ul {
 }
 
     nav ul li {
-        display: block; /* Change display to block for better stacking on small screens */
-        margin-bottom: 10px; /* Increase margin for better touch targets */
+        display: inline;
+        margin-right: 20px;
     }
-
-        nav ul li:last-child {
-            margin-bottom: 0; /* Remove margin from the last item */
-        }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-            nav ul li a:hover {
-                color: #ddd;
-            }
-
-/* Section Styles */
 section {
-    padding: 30px 20px; /* Adjust padding for smaller screens */
-    text-align: center;
+    padding: 20px;
+    margin-top: 70px; /* Adjust to accommodate fixed header */
 }
 
-    section h2 {
-        font-size: 24px; /* Decrease font size for smaller screens */
-        margin-bottom: 20px; /* Adjust margin for smaller screens */
-    }
-
-/* Footer Styles */
 footer {
     background-color: #333;
     color: #fff;
@@ -78,62 +44,13 @@ footer {
     width: 100%;
 }
 
-    footer p {
-        margin: 0;
-    }
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Apply animations */
-section {
-    animation: fadeIn 1s ease;
-}
-
-header {
-    animation: slideIn 1s ease;
-}
-
-/* Media Query for Mobile */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 24px;
+@media only screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    header {
+        padding: 10px;
     }
 
     nav ul li {
-        margin-bottom: 15px;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-        section h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-    footer {
-        padding: 8px;
+        margin-right: 10px;
     }
 }
